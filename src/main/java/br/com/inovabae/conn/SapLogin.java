@@ -36,6 +36,13 @@ public class SapLogin {
         }
 
     }
+
+    /**
+     * Create data file
+     * @param name
+     * @param suffix
+     * @param properties
+     */
     static void createDataFile(String name, String suffix, Properties properties)
     {
         File cfg = new File(name+"."+suffix);
