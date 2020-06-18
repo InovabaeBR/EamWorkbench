@@ -7,6 +7,7 @@ import org.apache.commons.lang3.time.DateUtils;
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaRDD;
 
+import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.SparkSession;
 
 import java.util.Date;
@@ -58,4 +59,5 @@ public class GroupCodesSparkJob {
                                 userAdmData, isUsed, isInactive, status);
                     });
     }
+
 }

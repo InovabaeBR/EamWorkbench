@@ -77,24 +77,10 @@ public class NotificationProfileCatalogsSparkJob {
     protected List<NotificationCatalog> getNotificationCatalogs() {
         SparkSession spark = getSparkSession();
 
+        //TODO
         JavaRDD<NotificationCatalog> groupCodesRdd = this.
                 getNotificationCatalogsGroupCodesRdd("file:///@LSMW//NotificationCatalogHeader.csv");
 
-
-
-
-
-
-
-
-
-
-//        JavaRDD<String> notifCatalogsRDD = spark.read()
-//                .option("header", "true")
-//                .option("encoding", "ISO-8859-1")
-//                .csv("xxx")
-//                .toJavaRDD()
-//                .map(new Tuple
 
         Dataset<Row> socket = spark.readStream()
                 .format("socket")
@@ -106,17 +92,6 @@ public class NotificationProfileCatalogsSparkJob {
         GroupCodesSparkJob groupCodesSparkJob = new GroupCodesSparkJob();
         JavaRDD<GroupCode> groupCodeJavaRDD = groupCodesSparkJob.getGroupCodeJavaRDD(spark);
 
-
-        groupCodeJavaRDD.filter(new Function<GroupCode, Boolean>() {
-            @Override
-            public Boolean call(GroupCode groupCode) throws Exception {
-                return null;
-            }
-        });
-
-
-
-
         groupCodesRdd.filter(new Function<NotificationCatalog, Boolean>() {
             @Override
             public Boolean call(NotificationCatalog notificationCatalog) throws Exception {
@@ -127,6 +102,10 @@ public class NotificationProfileCatalogsSparkJob {
 //        JavaRDD<Integer> result = squared.filter(
 //                new Function<Integer, Boolean>() { public Boolean call(Integer x) { return x != 1; }});
 
+        //TODO JOIN CSVs to finish the job
+        Dataset<Row> csv = spark.read().option("header", "true")
+                .option("encoding", "ISO-8859-1")
+                .csv("file:///@LSMW//NotificationCatalog.csv");
 
         JavaRDD<NotificationCatalog> notifCatalogsRDD = spark.read()
                 .option("header", "true")
