@@ -13,15 +13,15 @@ public class SapLogin {
     public static void main(String[] args) {
         // This will create a file called mySAPSystem.jcoDestination
         String DESTINATION_NAME1 = "mySAPSystem";
-        Properties connectProperties = new Properties();
-        connectProperties.setProperty(DestinationDataProvider.JCO_ASHOST, "10.129.19.151"); //host
-        connectProperties.setProperty(DestinationDataProvider.JCO_SYSNR,  "00"); //system number
-        connectProperties.setProperty(DestinationDataProvider.JCO_CLIENT, "442"); //client number
-        connectProperties.setProperty(DestinationDataProvider.JCO_USER,   "MPOSRFC");
-        connectProperties.setProperty(DestinationDataProvider.JCO_PASSWD, "123456");
-        connectProperties.setProperty(DestinationDataProvider.JCO_LANG,   "pt");
+        Properties conn = new Properties();
+        conn.setProperty(DestinationDataProvider.JCO_ASHOST, "10.129.19.151"); //host
+        conn.setProperty(DestinationDataProvider.JCO_SYSNR,  "00"); //system number
+        conn.setProperty(DestinationDataProvider.JCO_CLIENT, "442"); //client number
+        conn.setProperty(DestinationDataProvider.JCO_USER,   "MPOSRFC");
+        conn.setProperty(DestinationDataProvider.JCO_PASSWD, "123456");
+        conn.setProperty(DestinationDataProvider.JCO_LANG,   "pt");
 
-        createDataFile(DESTINATION_NAME1, "jcoDestination", connectProperties);
+        createDataFile(DESTINATION_NAME1, "/resources/jcoDestination", conn);
         // This will use that destination file to connect to SAP
         try {
             JCoDestination destination = JCoDestinationManager.getDestination("mySAPSystem");
@@ -34,7 +34,6 @@ public class SapLogin {
         } catch (JCoException e){
             e.printStackTrace();
         }
-
     }
 
     /**
