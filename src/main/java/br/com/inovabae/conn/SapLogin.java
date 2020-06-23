@@ -21,7 +21,7 @@ public class SapLogin {
         conn.setProperty(DestinationDataProvider.JCO_PASSWD, "123456");
         conn.setProperty(DestinationDataProvider.JCO_LANG,   "pt");
 
-        createDataFile(DESTINATION_NAME1, "/resources/jcoDestination", conn);
+        createDataFile(DESTINATION_NAME1, "jcoDestination", conn);
         // This will use that destination file to connect to SAP
         try {
             JCoDestination destination = JCoDestinationManager.getDestination("mySAPSystem");
