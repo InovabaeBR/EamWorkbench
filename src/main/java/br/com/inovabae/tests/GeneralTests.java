@@ -21,6 +21,7 @@ public class GeneralTests {
         for (String s : StringUtils.split(str, "\\*")) {
             System.out.println(s);
         }
+
         SparkSession sc = getSparkSession();
         JavaRDD<String> ds = sc.read().textFile("/Users/evandroneves/spark.txt")
                 .toJavaRDD();
@@ -35,6 +36,7 @@ public class GeneralTests {
             builder.append(tuple2._1).append("-").append(tuple2._2);
             System.out.println(builder.toString());
         }
+
     }
 
     private static SparkSession getSparkSession() {
