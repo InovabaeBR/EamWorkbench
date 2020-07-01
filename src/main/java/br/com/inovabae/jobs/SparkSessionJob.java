@@ -5,6 +5,10 @@ import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
 import org.apache.spark.sql.SparkSession;
 
+/**
+ * Filter with lists
+ * https://stackoverflow.com/questions/46860413/filter-javardd-based-on-a-arraylist-of-index-ids
+ */
 public abstract class SparkSessionJob {
     //TODO SINGLETON
     protected SparkSession getSparkSession() {
