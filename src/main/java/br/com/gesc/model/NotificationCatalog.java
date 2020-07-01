@@ -1,4 +1,4 @@
-package br.com.inovabae.model;
+package br.com.gesc.model;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package br.com.inovabae.tests;
+package br.com.gesc.tests;
 
 import org.apache.commons.lang3.StringUtils;
 

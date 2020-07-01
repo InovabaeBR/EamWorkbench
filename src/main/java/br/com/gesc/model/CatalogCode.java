@@ -1,10 +1,13 @@
-package br.com.inovabae.model;
+package br.com.gesc.model;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 
 import java.util.Date;
 
+/**
+ * @since 30/06/2020
+ */
 public class CatalogCode {
     private GroupCode groupCode;
     private String code;

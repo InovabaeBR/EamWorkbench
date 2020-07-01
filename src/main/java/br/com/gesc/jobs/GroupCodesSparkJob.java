@@ -1,17 +1,14 @@
-package br.com.inovabae.jobs;
+package br.com.gesc.jobs;
 
-import br.com.inovabae.model.CatalogEnum;
-import br.com.inovabae.model.GroupCode;
-import br.com.inovabae.model.UserAdmData;
+import br.com.gesc.model.CatalogEnum;
+import br.com.gesc.model.GroupCode;
+import br.com.gesc.model.UserAdmData;
 import org.apache.commons.lang3.time.DateUtils;
-import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaRDD;
 
-import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.SparkSession;
 
 import java.util.Date;
-import java.util.List;
 
 public class GroupCodesSparkJob {
 //    public static void main(String[] args) {

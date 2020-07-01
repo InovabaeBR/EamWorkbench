@@ -1,4 +1,4 @@
-package br.com.inovabae.conn;
+package br.com.gesc.conn;
 
 import com.sap.conn.jco.ext.DestinationDataProvider;
 import com.sap.conn.jco.JCoDestination;

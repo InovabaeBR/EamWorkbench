@@ -1,4 +1,4 @@
-package br.com.inovabae.model;
+package br.com.gesc.model;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;

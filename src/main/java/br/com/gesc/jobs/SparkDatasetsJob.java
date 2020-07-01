@@ -1,4 +1,4 @@
-package br.com.inovabae.jobs;
+package br.com.gesc.jobs;
 
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaRDD;
@@ -19,7 +19,6 @@ public class SparkDatasetsJob {
         SparkDatasetsJob job = new SparkDatasetsJob();
         JobsUtilz utilz = new JobsUtilz();
         //TODO LER TODOS OS CSV
-
 
         Dataset<Row> notifTypeDs = job.openDataset("file:///@LSMW//TipoDeNota.csv");
         Dataset<Row> catalogProfileGroupCodeDs = job.openDataset("file:///@LSMW//CatalogProfileGroupCode.csv");

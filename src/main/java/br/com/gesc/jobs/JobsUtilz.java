@@ -1,4 +1,4 @@
-package br.com.inovabae.jobs;
+package br.com.gesc.jobs;
 
 import org.apache.commons.lang3.StringUtils;
 

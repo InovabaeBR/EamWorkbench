@@ -1,8 +1,8 @@
-package br.com.inovabae.jobs;
+package br.com.gesc.jobs;
 
-import br.com.inovabae.model.CatalogEnum;
-import br.com.inovabae.model.GroupCode;
-import br.com.inovabae.model.UserAdmData;
+import br.com.gesc.model.CatalogEnum;
+import br.com.gesc.model.GroupCode;
+import br.com.gesc.model.UserAdmData;
 import org.apache.commons.lang3.time.DateUtils;
 import org.apache.flink.api.common.functions.MapFunction;
 import org.apache.flink.api.java.DataSet;

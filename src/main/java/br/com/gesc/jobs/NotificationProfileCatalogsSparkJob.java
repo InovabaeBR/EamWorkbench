@@ -1,6 +1,6 @@
-package br.com.inovabae.jobs;
+package br.com.gesc.jobs;
 
-import br.com.inovabae.model.*;
+import br.com.gesc.model.*;
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.function.Function;
