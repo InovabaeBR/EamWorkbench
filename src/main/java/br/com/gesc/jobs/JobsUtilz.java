@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class JobsUtilz {
-
     public static void main(String[] args) {
         String expression = "MC-DESV";
         String[] texts = {"PM-DESL", "PM-DESLO", "PM-DESV", "MC-DESV", "MC-APONT"};

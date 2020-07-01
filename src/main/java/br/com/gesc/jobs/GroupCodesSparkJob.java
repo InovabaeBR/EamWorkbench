@@ -11,22 +11,25 @@ import org.apache.spark.sql.SparkSession;
 import java.util.Date;
 
 public class GroupCodesSparkJob {
-//    public static void main(String[] args) {
-//        SparkConf conf = new SparkConf()
-//                .setAppName("CatalogSparkJob")
-//                .setMaster("local[*]");
-//
-//        SparkSession spark = SparkSession.builder()
-//                .config(conf)
-//                .getOrCreate();
-//
-//        JavaRDD<GroupCode> groupCodesRDD = getGroupCodeJavaRDD(spark);
+    public static void main(String[] args) {
+        SparkConf conf = new SparkConf()
+                .setAppName("CatalogSparkJob")
+                .setMaster("local[*]");
+
+        SparkSession spark = SparkSession.builder()
+                .config(conf)
+                .getOrCreate();
+
+        GroupCodesSparkJob job = new GroupCodesSparkJob();
+        JavaRDD<GroupCode> groupCodesRDD = job.getGroupCodeJavaRDD(spark);
+//        groupCodesRDD.filter(groupCode -> groupCode)
+
 //
 //        List<GroupCode> collect = groupCodesRDD.collect();
 //        for (GroupCode gc : collect) {
 //            System.out.println(gc.toString());
 //        }
-//    }
+    }
 
     protected JavaRDD<GroupCode> getGroupCodeJavaRDD(SparkSession spark) {
         return spark.read()

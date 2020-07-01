@@ -11,7 +11,9 @@ import org.slf4j.LoggerFactory;
 import scala.Tuple2;
 import scala.Tuple3;
 
-public class SparkDatasetsJob {
+import java.util.Collections;
+
+public class SparkDatasetsJob extends SparkSessionJob {
     private static Logger log = LoggerFactory.getLogger(SparkDatasetsJob.class);
     private Dataset<Row> groupCodeDataset;
 
@@ -23,7 +25,6 @@ public class SparkDatasetsJob {
         Dataset<Row> notifTypeDs = job.openDataset("file:///@LSMW//TipoDeNota.csv");
         Dataset<Row> catalogProfileGroupCodeDs = job.openDataset("file:///@LSMW//CatalogProfileGroupCode.csv");
         Dataset<Row> groupCodeDs = job.openDataset("file:///@LSMW//GrupoCodes.csv");
-
 
         groupCodeDs
                 .toJavaRDD()
@@ -39,7 +40,6 @@ public class SparkDatasetsJob {
                                 return new Tuple2(keys, values);
                             }
                         }
-
                 );
 
         //TODO MONTAR O JOIN ENTRE OS CSV
@@ -50,30 +50,15 @@ public class SparkDatasetsJob {
                     String catalog = parts[1];
                     String groupCode = parts[2];
 
-                    //TODO Filtrar os grupoCodes com base no catalog e o groupCode em groupCodeDs
-//                    groupCodeDs.filter("C0=" + catalog, "C1=" + ;
                     return new Tuple3(catalogProfile, catalog, groupCode);
                 });
+
+        catalogProfileGroupCodeTuples.filter(record -> groupCodeDs.collectAsList().get(0).get(0).equals(record._1()));
+
+        //TODO Filtrar os grupoCodes com base no catalog e o groupCode em groupCodeDs
+
+
     }
 
-    //TODO SINGLETON
-    private SparkSession getSparkSession() {
-        SparkConf conf = new SparkConf()
-                .setAppName("EamSparkJobs")
-                .setMaster("local[*]");
 
-        return SparkSession.builder()
-                .config(conf)
-                .getOrCreate();
-    }
-
-    private Dataset<Row> openDataset(String csvFile) {
-        SparkSession sparkSession = this.getSparkSession();
-        return sparkSession
-                .read()
-                .option("header", "true")
-                .option("encoding", "ISO-8859-1")
-                .option("sep", ";")
-                .csv(csvFile);
-    }
 }
