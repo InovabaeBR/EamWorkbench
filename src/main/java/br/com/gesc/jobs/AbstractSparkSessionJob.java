@@ -1,4 +1,4 @@
-package br.com.inovabae.jobs;
+package br.com.gesc.jobs;
 
 import org.apache.spark.SparkConf;
 import org.apache.spark.sql.Dataset;
@@ -9,7 +9,9 @@ import org.apache.spark.sql.SparkSession;
  * Filter with lists
  * https://stackoverflow.com/questions/46860413/filter-javardd-based-on-a-arraylist-of-index-ids
  */
-public abstract class SparkSessionJob {
+public abstract class AbstractSparkSessionJob {
+    public String csvPath = "//resource";
+
     //TODO SINGLETON
     protected SparkSession getSparkSession() {
         SparkConf conf = new SparkConf()
@@ -30,5 +32,7 @@ public abstract class SparkSessionJob {
                 .option("sep", ";")
                 .csv(csvFile);
     }
+
+
 
 }

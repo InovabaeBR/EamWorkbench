@@ -1,33 +1,31 @@
 package br.com.gesc.jobs;
 
-import org.apache.spark.SparkConf;
+import br.com.gesc.model.GroupCode;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.function.PairFunction;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
-import org.apache.spark.sql.SparkSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import scala.Tuple2;
 import scala.Tuple3;
 
-import java.util.Collections;
-
-public class SparkDatasetsJob extends SparkSessionJob {
+public class SparkDatasetsJob extends AbstractSparkSessionJob {
     private static Logger log = LoggerFactory.getLogger(SparkDatasetsJob.class);
     private Dataset<Row> groupCodeDataset;
 
     public static void main(String[] args) {
         SparkDatasetsJob job = new SparkDatasetsJob();
         JobsUtilz utilz = new JobsUtilz();
-        //TODO LER TODOS OS CSV
 
-        Dataset<Row> notifTypeDs = job.openDataset("file:///@LSMW//TipoDeNota.csv");
-        Dataset<Row> catalogProfileGroupCodeDs = job.openDataset("file:///@LSMW//CatalogProfileGroupCode.csv");
-        Dataset<Row> groupCodeDs = job.openDataset("file:///@LSMW//GrupoCodes.csv");
+        Dataset<Row> notifTypeDs = job.openDataset(job.csvPath.concat("//1-NotaPerfilCatalogo.csv"));
+        GroupCodesSparkJob grupoCodesJob = new GroupCodesSparkJob();
+        JavaRDD<GroupCode> groupCodeJavaRDD = grupoCodesJob.getGroupCodeJavaRDD(job.csvPath.concat("//2-GrupoCode.csv"));
+        Dataset<Row> codesDs = job.openDataset(job.csvPath.concat("//3-Codes.csv"));
+        Dataset<Row> catalogProfileGroupCodeDs = job.openDataset(job.csvPath.concat("//4-PerfilCatalogoGrupoCode.csv"));
 
-        groupCodeDs
-                .toJavaRDD()
+
+        notifTypeDs.toJavaRDD()
                 .mapToPair(
                         new PairFunction<Row, String[], String[]>() {
                             @Override
@@ -53,7 +51,7 @@ public class SparkDatasetsJob extends SparkSessionJob {
                     return new Tuple3(catalogProfile, catalog, groupCode);
                 });
 
-        catalogProfileGroupCodeTuples.filter(record -> groupCodeDs.collectAsList().get(0).get(0).equals(record._1()));
+        catalogProfileGroupCodeTuples.filter(record -> groupCodesDs.collectAsList().get(0).get(0).equals(record._1()));
 
         //TODO Filtrar os grupoCodes com base no catalog e o groupCode em groupCodeDs
 

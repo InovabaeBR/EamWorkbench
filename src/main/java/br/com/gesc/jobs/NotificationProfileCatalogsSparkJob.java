@@ -11,7 +11,7 @@ import org.apache.spark.sql.SparkSession;
 import java.util.ArrayList;
 import java.util.List;
 
-public class NotificationProfileCatalogsSparkJob {
+public class NotificationProfileCatalogsSparkJob extends AbstractSparkSessionJob {
     public static void main(String[] args) {
         //List<NotificationCatalog> collect = getNotificationCatalogs();
 //        for (NotificationCatalog nc : collect) {
@@ -26,24 +26,8 @@ public class NotificationProfileCatalogsSparkJob {
         }
     }
 
-    protected static SparkSession getSparkSession() {
-        SparkConf conf = new SparkConf()
-                .setAppName("SapPmSparkJobs")
-                .setMaster("local[*]");
-
-        return SparkSession.builder()
-                .config(conf)
-                .getOrCreate();
-    }
-
-    private JavaRDD<NotificationCatalog> getNotificationCatalogsGroupCodesRdd(String path) {
-        SparkSession spark = getSparkSession();
-
-
-        JavaRDD<NotificationCatalog> notifCatalogsRDD = spark.read()
-                .option("header", "true")
-                .option("encoding", "ISO-8859-1")
-                .csv(path)
+    protected JavaRDD<NotificationCatalog> getNotificationCatalogsGroupCodesRdd(String path) {
+        JavaRDD<NotificationCatalog> notifCatalogsRDD = this.openDataset(path)
                 .toJavaRDD()
                 .map(line -> {
                     String parts[] = line.getString(0).split(";");
