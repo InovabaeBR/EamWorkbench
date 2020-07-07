@@ -1,0 +1,6 @@
+Tipo de nota;Tipo de nota;Codificação;Sintomas;Causas;Medidas;Atividades;Partes do objeto;Classificação ativa;Perfil do catálogo
+ER;Emergência - Reparo;D;;;;A;;;PM_EMC_03
+MG;Manutenção - Geral;D;C;5;;A;B;X;PM-GERAL
+Z3;Nota Civil;D;C;;;A;B;;PM-CIVIL
+Z6;Nota CSPE - MAM;D;C;5;2;A;B;;PM_PRE_02
+B2;NOTA PONR/POR/PG10;D;;;;A;B;;PM_BOL_02

@@ -40,12 +40,13 @@ public class OrdemSapPm {
     public Date dataEntrada;
 
     /**
-     * Operações da ordem PM
+     * Atividades a serem executadas na ordem PM
      */
     public List<OrdemSapPmOperacao> operacoes;
 
     /**
-     * Componentes da ordem PM
+     * Materiais planejados a serem utilizados na ordem PM<br>
+     * Serão considerados somente materiais de estoque (não materiais de compra direta)
      */
     public List<OrdemSapPmComponente> componentes;
 }
