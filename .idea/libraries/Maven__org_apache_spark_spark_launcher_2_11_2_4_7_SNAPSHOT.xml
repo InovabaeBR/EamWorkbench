@@ -1,13 +1,13 @@
 <component name="libraryTable">
   <library name="Maven: org.apache.spark:spark-launcher_2.11:2.4.7-SNAPSHOT">
     <CLASSES>
-      <root url="jar://$MAVEN_REPOSITORY$/org/apache/spark/spark-launcher_2.11/2.4.7-SNAPSHOT/spark-launcher_2.11-2.4.7-20200615.182832-31.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/apache/spark/spark-launcher_2.11/2.4.7-SNAPSHOT/spark-launcher_2.11-2.4.7-20200709.125428-51.jar!/" />
     </CLASSES>
     <JAVADOC>
-      <root url="jar://$MAVEN_REPOSITORY$/org/apache/spark/spark-launcher_2.11/2.4.7-SNAPSHOT/spark-launcher_2.11-2.4.7-20200615.182832-31-javadoc.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/apache/spark/spark-launcher_2.11/2.4.7-SNAPSHOT/spark-launcher_2.11-2.4.7-20200709.125428-51-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
-      <root url="jar://$MAVEN_REPOSITORY$/org/apache/spark/spark-launcher_2.11/2.4.7-SNAPSHOT/spark-launcher_2.11-2.4.7-20200615.182832-31-sources.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/apache/spark/spark-launcher_2.11/2.4.7-SNAPSHOT/spark-launcher_2.11-2.4.7-20200709.125428-51-sources.jar!/" />
     </SOURCES>
   </library>
 </component>
