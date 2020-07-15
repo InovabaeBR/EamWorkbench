@@ -11,6 +11,8 @@ import scala.Tuple2;
 import scala.Tuple3;
 import scala.Tuple4;
 
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -23,11 +25,9 @@ public class SparkDatasetsJob extends AbstractSparkSessionJob {
         SparkDatasetsJob job = new SparkDatasetsJob();
         JobsUtilz utilz = new JobsUtilz();
 
-        Dataset<Row> notifTypeDs = job.openDataset(job.csvPath.concat("//1-NotaPerfilCatalogo.csv"));
-        Dataset<Row> catalogProfileGroupCodeDs = job.openDataset(job.csvPath.concat("//2-PerfilCatalogoGrupoCode.csv"));
-        GroupCodesSparkJob grupoCodesJob = new GroupCodesSparkJob();
-        JavaRDD<GroupCode> groupCodeJavaRDD = grupoCodesJob.getGroupCodeJavaRDD(job.csvPath.concat("//3-GrupoCode.csv"));
-        Dataset<Row> codesDs = job.openDataset(job.csvPath.concat("//4-Codes.csv"));
+        Dataset<Row> notifTypeDs = job.openDataset("1-NotaPerfilCatalogo.csv");
+        Dataset<Row> catalogProfileGroupCodeDs = job.openDataset("2-PerfilCatalogoGrupoCode.csv");
+        Dataset<Row> codesDs = job.openDataset("4-Codes.csv");
 
         JavaRDD<Tuple4> notifTypeRdd = notifTypeDs.toJavaRDD()
                 .map(record -> {
@@ -41,7 +41,7 @@ public class SparkDatasetsJob extends AbstractSparkSessionJob {
                 });
 
         //TODO MONTAR O JOIN ENTRE OS CSV
-        final JavaRDD<Tuple3> catalogProfileGroupCodeTuples = catalogProfileGroupCodeDs.toJavaRDD()
+        final JavaRDD<Tuple3> catalogProfileGroupCodeRdd = catalogProfileGroupCodeDs.toJavaRDD()
                 .map(line -> {
                     String parts[] = line.getString(0).split(";");
                     String catalogProfile = parts[0];
@@ -50,6 +50,10 @@ public class SparkDatasetsJob extends AbstractSparkSessionJob {
 
                     return new Tuple3(catalogProfile, catalog, groupCode);
                 });
+
+        GroupCodesSparkJob grupoCodesJob = new GroupCodesSparkJob();
+        JavaRDD<GroupCode> groupCodeJavaRDD = grupoCodesJob.getGroupCodeJavaRDD("//3-GrupoCode.csv");
+
 
         JavaRDD<Tuple4> codesRdd = codesDs.toJavaRDD().map(record -> {
             String[] parts = record.getString(0).split(";");
@@ -61,7 +65,7 @@ public class SparkDatasetsJob extends AbstractSparkSessionJob {
             return new Tuple4(catalog, groupCode, code, text);
         });
 
-        catalogProfileGroupCodeTuples.filter(record -> groupCodesDs.collectAsList().get(0).get(0).equals(record._1()));
+//        catalogProfileGroupCodeRdd.filter(record -> groupCodesDs.collectAsList().get(0).get(0).equals(record._1()));
 
         //TODO Filtrar os grupoCodes com base no catalog e o groupCode em groupCodeDs
 

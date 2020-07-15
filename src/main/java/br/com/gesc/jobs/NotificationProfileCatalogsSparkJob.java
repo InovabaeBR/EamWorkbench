@@ -74,7 +74,7 @@ public class NotificationProfileCatalogsSparkJob extends AbstractSparkSessionJob
 
 
         GroupCodesSparkJob groupCodesSparkJob = new GroupCodesSparkJob();
-        JavaRDD<GroupCode> groupCodeJavaRDD = groupCodesSparkJob.getGroupCodeJavaRDD(spark);
+        //JavaRDD<GroupCode> groupCodeJavaRDD = groupCodesSparkJob.getGroupCodeJavaRDD(spark);
 
         groupCodesRdd.filter(new Function<NotificationCatalog, Boolean>() {
             @Override
