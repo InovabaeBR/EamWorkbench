@@ -12,6 +12,10 @@ public class GroupCode implements Serializable {
     private Boolean isInactive;
     private int status;
 
+    public GroupCode() {
+        super();
+    }
+
     public GroupCode(CatalogEnum catalogEnum, String codeGroup, String shortText,
                      UserAdmData userAdmData, Boolean isUsed, Boolean isInactive,
                      int status) {
