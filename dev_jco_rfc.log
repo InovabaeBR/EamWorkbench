@@ -1,0 +1,341 @@
+
+**** Error file opened at 20200724 143422 Brasilia Time Rel. 3.1.2 (2019-10-02) [753.512]
+Error:     >Fri Jul 24 14:34:22,286<    RfcException raised by system [<unknown>]:
+	message: Connect to SAP gateway failed
+	Connection parameters: TYPE=A DESTINATION=mySAPSystem ASHOST=10.129.19.151 SYSNR=00 PCS=1
+
+LOCATION    CPIC (TCP/IP) on local host with Unicode
+ERROR       partner '10.129.19.151:3300' not reached
+TIME        Fri Jul 24 14:34:22 2020
+RELEASE     753
+COMPONENT   NI (network interface)
+VERSION     40
+RC          -10
+MODULE      D:/depot/bas/753_REL/src/base/ni/nixxi.cpp
+LINE        3449
+DETAIL      NiPConnect2: 10.129.19.151:3300
+SYSTEM CALL connect
+ERRNO       10060
+ERRNO TEXT  WSAETIMEDOUT: Connection timed out
+COUNTER     2
+
+	return code: RFC_FAILURE (1)
+	error group: 102
+	key: RFC_ERROR_COMMUNICATION
+
+
+**** Error file opened at 20200724 181207 Brasilia Time Rel. 3.1.2 (2019-10-02) [753.512]
+Error:     >Fri Jul 24 18:12:07,533<    RfcException raised by system [<unknown>]:
+	message: Connect to SAP gateway failed
+	Connection parameters: TYPE=A DESTINATION=mySAPSystem ASHOST=10.129.19.151 SYSNR=00 PCS=1
+
+LOCATION    CPIC (TCP/IP) on local host with Unicode
+ERROR       partner '10.129.19.151:3300' not reached
+TIME        Fri Jul 24 18:12:07 2020
+RELEASE     753
+COMPONENT   NI (network interface)
+VERSION     40
+RC          -10
+MODULE      D:/depot/bas/753_REL/src/base/ni/nixxi.cpp
+LINE        3449
+DETAIL      NiPConnect2: 10.129.19.151:3300
+SYSTEM CALL connect
+ERRNO       10060
+ERRNO TEXT  WSAETIMEDOUT: Connection timed out
+COUNTER     2
+
+	return code: RFC_FAILURE (1)
+	error group: 102
+	key: RFC_ERROR_COMMUNICATION
+
+
+**** Error file opened at 20200724 181548 Brasilia Time Rel. 3.1.2 (2019-10-02) [753.512]
+Exception thrown [Fri Jul 24 18:15:48,816]: Parameter ABAP application server host ('jco.client.ashost') is missing
+com.sap.conn.rfc.exceptions.RfcInvalidConfigurationException: Configuration of destination mySAPSystem is incorrect: Parameter ABAP application server host ('jco.client.ashost') is missing
+	at com.sap.conn.rfc.api.RfcOptions.throwConfigurationException(RfcOptions.java:820)
+	at com.sap.conn.rfc.api.RfcOptions.checkParameters(RfcOptions.java:355)
+	at com.sap.conn.jco.rt.MiddlewareJavaRfc$JavaRfcClient.initialize(MiddlewareJavaRfc.java:1109)
+	at com.sap.conn.jco.rt.MiddlewareJavaRfc$JavaRfcClient.connect(MiddlewareJavaRfc.java:1137)
+	at com.sap.conn.jco.rt.ClientConnection.connect(ClientConnection.java:713)
+	at com.sap.conn.jco.rt.PoolingFactory.init(PoolingFactory.java:117)
+	at com.sap.conn.jco.rt.ConnectionManager.createFactory(ConnectionManager.java:441)
+	at com.sap.conn.jco.rt.DefaultConnectionManager.createFactory(DefaultConnectionManager.java:24)
+	at com.sap.conn.jco.rt.ConnectionManager.getFactory(ConnectionManager.java:391)
+	at com.sap.conn.jco.rt.RfcDestination.initialize(RfcDestination.java:1048)
+	at com.sap.conn.jco.rt.RfcDestination.getAttributes(RfcDestination.java:675)
+	at com.sap.conn.jco.rt.RfcDestination.getAttributes(RfcDestination.java:36)
+	at br.com.gesc.sap.services.SapConnect.main(SapLogin.java:36)
+
+
+**** Error file opened at 20200724 181802 Brasilia Time Rel. 3.1.2 (2019-10-02) [753.512]
+Exception thrown [Fri Jul 24 18:18:02,198]: Parameter ABAP system number ('jco.client.sysnr') is missing
+com.sap.conn.rfc.exceptions.RfcInvalidConfigurationException: Configuration of destination mySAPSystem is incorrect: Parameter ABAP system number ('jco.client.sysnr') is missing
+	at com.sap.conn.rfc.api.RfcOptions.throwConfigurationException(RfcOptions.java:820)
+	at com.sap.conn.rfc.api.RfcOptions.checkSystemNumber(RfcOptions.java:238)
+	at com.sap.conn.rfc.api.RfcOptions.checkParameters(RfcOptions.java:357)
+	at com.sap.conn.jco.rt.MiddlewareJavaRfc$JavaRfcClient.initialize(MiddlewareJavaRfc.java:1109)
+	at com.sap.conn.jco.rt.MiddlewareJavaRfc$JavaRfcClient.connect(MiddlewareJavaRfc.java:1137)
+	at com.sap.conn.jco.rt.ClientConnection.connect(ClientConnection.java:713)
+	at com.sap.conn.jco.rt.PoolingFactory.init(PoolingFactory.java:117)
+	at com.sap.conn.jco.rt.ConnectionManager.createFactory(ConnectionManager.java:441)
+	at com.sap.conn.jco.rt.DefaultConnectionManager.createFactory(DefaultConnectionManager.java:24)
+	at com.sap.conn.jco.rt.ConnectionManager.getFactory(ConnectionManager.java:391)
+	at com.sap.conn.jco.rt.RfcDestination.initialize(RfcDestination.java:1048)
+	at com.sap.conn.jco.rt.RfcDestination.getAttributes(RfcDestination.java:675)
+	at com.sap.conn.jco.rt.RfcDestination.getAttributes(RfcDestination.java:36)
+	at br.com.gesc.sap.services.SapConnect.main(SapLogin.java:36)
+
+
+**** Error file opened at 20200724 181924 Brasilia Time Rel. 3.1.2 (2019-10-02) [753.512]
+Error:     >Fri Jul 24 18:19:24,802<    RfcException raised by system [<unknown>]:
+	message: Connect to SAP gateway failed
+	Connection parameters: TYPE=A DESTINATION=mySAPSystem ASHOST=177.67.63.18 SYSNR=02 SAPROUTER=/H/177.67.63.18/S/3299/W/emergencial/M/172.31.0.173/S/3602/G/SPACE PCS=1
+
+LOCATION    SAProuter 40.4 on 'cpsro01vz'
+ERROR       cpsro01vz: route permission denied (b120e2cf.virtua.com.br to
+            177.67.63.18, 3302)
+TIME        Fri Jul 24 18:20:10 2020
+RELEASE     742
+COMPONENT   NI (network interface)
+VERSION     40
+RC          -94
+COUNTER     73768130
+
+	return code: RFC_FAILURE (1)
+	error group: 102
+	key: RFC_ERROR_COMMUNICATION
+
+
+**** Error file opened at 20200724 182005 Brasilia Time Rel. 3.1.2 (2019-10-02) [753.512]
+Error:     >Fri Jul 24 18:20:05,273<    RfcException raised by system [<unknown>]:
+	message: Connect to SAP gateway failed
+	Connection parameters: TYPE=A DESTINATION=mySAPSystem ASHOST=177.67.63.18 SYSNR=02 SAPROUTER=/H/177.67.63.18/S/3299/W/emergencial/M/172.31.0.173/S/3602/G/SPACE PCS=1
+
+LOCATION    SAProuter 40.4 on 'cpsro01vz'
+ERROR       cpsro01vz: route permission denied (b120e2cf.virtua.com.br to
+            177.67.63.18, 3302)
+TIME        Fri Jul 24 18:20:50 2020
+RELEASE     742
+COMPONENT   NI (network interface)
+VERSION     40
+RC          -94
+COUNTER     73768145
+
+	return code: RFC_FAILURE (1)
+	error group: 102
+	key: RFC_ERROR_COMMUNICATION
+
+
+**** Error file opened at 20200724 182134 Brasilia Time Rel. 3.1.2 (2019-10-02) [753.512]
+Error:     >Fri Jul 24 18:21:34,573<    RfcException raised by system [<unknown>]:
+	message: Connect to SAP gateway failed
+	Connection parameters: TYPE=A DESTINATION=mySAPSystem ASHOST=177.67.63.18 SYSNR=02 PCS=1
+
+LOCATION    CPIC (TCP/IP) on local host with Unicode
+ERROR       partner '177.67.63.18:3302' not reached
+TIME        Fri Jul 24 18:21:34 2020
+RELEASE     753
+COMPONENT   NI (network interface)
+VERSION     40
+RC          -10
+MODULE      D:/depot/bas/753_REL/src/base/ni/nixxi.cpp
+LINE        3449
+DETAIL      NiPConnect2: 177.67.63.18:3302
+SYSTEM CALL connect
+ERRNO       10060
+ERRNO TEXT  WSAETIMEDOUT: Connection timed out
+COUNTER     2
+
+	return code: RFC_FAILURE (1)
+	error group: 102
+	key: RFC_ERROR_COMMUNICATION
+
+
+**** Error file opened at 20200724 182427 Brasilia Time Rel. 3.1.2 (2019-10-02) [753.512]
+Error:     >Fri Jul 24 18:24:27,085<    RfcException raised by system [<unknown>]:
+	message: Connect to SAP gateway failed
+	Connection parameters: TYPE=A DESTINATION=mySAPSystem ASHOST=177.67.63.18 SYSNR=02 SAPROUTER=/H/177.67.63.18/S/3299/W/emergencial/M/172.31.0.173/S/3602/G/SPACE PCS=1
+
+LOCATION    SAProuter 40.4 on 'cpsro01vz'
+ERROR       cpsro01vz: route permission denied (b120e2cf.virtua.com.br to
+            177.67.63.18, 3302)
+TIME        Fri Jul 24 18:25:11 2020
+RELEASE     742
+COMPONENT   NI (network interface)
+VERSION     40
+RC          -94
+COUNTER     73768219
+
+	return code: RFC_FAILURE (1)
+	error group: 102
+	key: RFC_ERROR_COMMUNICATION
+
+
+**** Error file opened at 20200724 182634 Brasilia Time Rel. 3.1.2 (2019-10-02) [753.512]
+Error:     >Fri Jul 24 18:26:34,029<    RfcException raised by system [<unknown>]:
+	message: Connect to SAP gateway failed
+	Connection parameters: TYPE=A DESTINATION=mySAPSystem ASHOST=172.31.0.173 SYSNR=02 SAPROUTER=/H/177.67.63.18/S/3299/W/emergencial/M/172.31.0.173/S/3602/G/SPACE PCS=1
+
+LOCATION    SAProuter 40.4 on 'cpsro01vz'
+ERROR       cpsro01vz: route permission denied (b120e2cf.virtua.com.br to
+            172.31.0.173, 3302)
+TIME        Fri Jul 24 18:27:19 2020
+RELEASE     742
+COMPONENT   NI (network interface)
+VERSION     40
+RC          -94
+COUNTER     73768271
+
+	return code: RFC_FAILURE (1)
+	error group: 102
+	key: RFC_ERROR_COMMUNICATION
+
+
+**** Error file opened at 20200724 182734 Brasilia Time Rel. 3.1.2 (2019-10-02) [753.512]
+Error:     >Fri Jul 24 18:27:34,811<    RfcException raised by system [<unknown>]:
+	message: Connect to SAP gateway failed
+	Connection parameters: TYPE=A DESTINATION=mySAPSystem ASHOST=172.31.0.173 SYSNR=02 SAPROUTER=/H/177.67.63.18/S/3299/H/ PCS=1
+
+LOCATION    SAProuter 40.4 on 'cpsro01vz'
+ERROR       cpsro01vz: route permission denied (b120e2cf.virtua.com.br to
+            172.31.0.173, 3302)
+TIME        Fri Jul 24 18:28:20 2020
+RELEASE     742
+COMPONENT   NI (network interface)
+VERSION     40
+RC          -94
+COUNTER     73768304
+
+	return code: RFC_FAILURE (1)
+	error group: 102
+	key: RFC_ERROR_COMMUNICATION
+
+
+**** Error file opened at 20200724 182856 Brasilia Time Rel. 3.1.2 (2019-10-02) [753.512]
+Exception thrown [Fri Jul 24 18:28:56,848]: Parameter ABAP application server host ('jco.client.ashost') is missing
+com.sap.conn.rfc.exceptions.RfcInvalidConfigurationException: Configuration of destination mySAPSystem is incorrect: Parameter ABAP application server host ('jco.client.ashost') is missing
+	at com.sap.conn.rfc.api.RfcOptions.throwConfigurationException(RfcOptions.java:820)
+	at com.sap.conn.rfc.api.RfcOptions.checkParameters(RfcOptions.java:355)
+	at com.sap.conn.jco.rt.MiddlewareJavaRfc$JavaRfcClient.initialize(MiddlewareJavaRfc.java:1109)
+	at com.sap.conn.jco.rt.MiddlewareJavaRfc$JavaRfcClient.connect(MiddlewareJavaRfc.java:1137)
+	at com.sap.conn.jco.rt.ClientConnection.connect(ClientConnection.java:713)
+	at com.sap.conn.jco.rt.PoolingFactory.init(PoolingFactory.java:117)
+	at com.sap.conn.jco.rt.ConnectionManager.createFactory(ConnectionManager.java:441)
+	at com.sap.conn.jco.rt.DefaultConnectionManager.createFactory(DefaultConnectionManager.java:24)
+	at com.sap.conn.jco.rt.ConnectionManager.getFactory(ConnectionManager.java:391)
+	at com.sap.conn.jco.rt.RfcDestination.initialize(RfcDestination.java:1048)
+	at com.sap.conn.jco.rt.RfcDestination.getAttributes(RfcDestination.java:675)
+	at com.sap.conn.jco.rt.RfcDestination.getAttributes(RfcDestination.java:36)
+	at br.com.gesc.sap.services.SapConnect.main(SapLogin.java:35)
+
+
+**** Error file opened at 20200724 183051 Brasilia Time Rel. 3.1.2 (2019-10-02) [753.512]
+Error:     >Fri Jul 24 18:30:51,532<    RfcException raised by system [<unknown>]:
+	message: Connect to SAP gateway failed
+	Connection parameters: TYPE=A DESTINATION=mySAPSystem ASHOST=/H/177.67.63.18/S/3299 SYSNR=02 SAPROUTER=/H/177.67.63.18/S/3299/W/emergencial/M/172.31.0.173/S/3602/G/SPACE PCS=1
+
+LOCATION    SAProuter 40.4 on 'cpsro01vz'
+ERROR       internal error
+TIME        Fri Jul 24 18:31:37 2020
+RELEASE     742
+COMPONENT   NI (network interface)
+VERSION     40
+RC          -93
+MODULE      D:/depot/bas/753_REL/src/krn/si/gw/gwxx.c
+LINE        1147
+DETAIL      NiRClientHandle: route expected
+SYSTEM CALL GwRead
+COUNTER     73768369
+
+	return code: RFC_FAILURE (1)
+	error group: 102
+	key: RFC_ERROR_COMMUNICATION
+
+
+**** Error file opened at 20200724 183144 Brasilia Time Rel. 3.1.2 (2019-10-02) [753.512]
+Error:     >Fri Jul 24 18:31:44,713<    RfcException raised by system [<unknown>]:
+	message: Connect to SAP gateway failed
+	Connection parameters: TYPE=A DESTINATION=mySAPSystem ASHOST=none SYSNR=02 SAPROUTER=/H/177.67.63.18/S/3299/W/emergencial/M/172.31.0.173/S/3602/G/SPACE PCS=1
+
+LOCATION    SAProuter 40.4 on 'cpsro01vz'
+ERROR       hostname 'none' unknown
+TIME        Fri Jul 24 18:32:30 2020
+RELEASE     742
+COMPONENT   NI (network interface)
+VERSION     40
+RC          -90
+MODULE      /bas/742_REL/src/base/ni/niuxi.c
+LINE        1759
+DETAIL      NiPGetHostByName: 'none' not found
+SYSTEM CALL getaddrinfo
+COUNTER     73768384
+
+	return code: RFC_FAILURE (1)
+	error group: 102
+	key: RFC_ERROR_COMMUNICATION
+
+
+**** Error file opened at 20200724 183243 Brasilia Time Rel. 3.1.2 (2019-10-02) [753.512]
+Error:     >Fri Jul 24 18:32:43,085<    RfcException raised by system [<unknown>]:
+	message: Connect to SAP gateway failed
+	Connection parameters: TYPE=A DESTINATION=mySAPSystem ASHOST=comgas364 SYSNR=02 SAPROUTER=/H/177.67.63.18/S/3299/W/emergencial/M/172.31.0.173/S/3602/G/SPACE PCS=1
+
+LOCATION    SAProuter 40.4 on 'cpsro01vz'
+ERROR       cpsro01vz: route permission denied (b120e2cf.virtua.com.br to
+            comgas364, 3302)
+TIME        Fri Jul 24 18:33:28 2020
+RELEASE     742
+COMPONENT   NI (network interface)
+VERSION     40
+RC          -94
+COUNTER     73768416
+
+	return code: RFC_FAILURE (1)
+	error group: 102
+	key: RFC_ERROR_COMMUNICATION
+
+
+**** Error file opened at 20200724 183907 Brasilia Time Rel. 3.1.2 (2019-10-02) [753.512]
+Error:     >Fri Jul 24 18:39:07,114<    RfcException raised by system [<unknown>]:
+	message: Connect to SAP gateway failed
+	Connection parameters: TYPE=A DESTINATION=mySAPSystem ASHOST=comgas364 SYSNR=02 SAPROUTER=/H/177.67.63.18/S/3299/W/emergencial PCS=1
+
+LOCATION    CPIC (TCP/IP) on local host with Unicode
+ERROR       partner '177.67.63.18:3299' not reached
+TIME        Fri Jul 24 18:39:07 2020
+RELEASE     753
+COMPONENT   NI (network interface)
+VERSION     40
+RC          -10
+MODULE      D:/depot/bas/753_REL/src/base/ni/nixxi.cpp
+LINE        3449
+DETAIL      NiPConnect2: 177.67.63.18:3299
+SYSTEM CALL connect
+ERRNO       10060
+ERRNO TEXT  WSAETIMEDOUT: Connection timed out
+COUNTER     2
+
+	return code: RFC_FAILURE (1)
+	error group: 102
+	key: RFC_ERROR_COMMUNICATION
+
+
+**** Error file opened at 20200724 184052 Brasilia Time Rel. 3.1.2 (2019-10-02) [753.512]
+Error:     >Fri Jul 24 18:40:52,888<    RfcException raised by system [<unknown>]:
+	message: Connect to SAP gateway failed
+	Connection parameters: TYPE=A DESTINATION=mySAPSystem ASHOST=comgas364 SYSNR=02 SAPROUTER=/H/177.67.63.18/S/3299/W/emergencial/M/172.31.0.173/S/3602/G/SPACE PCS=1
+
+LOCATION    SAProuter 40.4 on 'cpsro01vz'
+ERROR       cpsro01vz: route permission denied (b120e2cf.virtua.com.br to
+            comgas364, 3302)
+TIME        Fri Jul 24 18:41:38 2020
+RELEASE     742
+COMPONENT   NI (network interface)
+VERSION     40
+RC          -94
+COUNTER     73768556
+
+	return code: RFC_FAILURE (1)
+	error group: 102
+	key: RFC_ERROR_COMMUNICATION
+

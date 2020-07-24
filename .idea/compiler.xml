@@ -11,6 +11,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="SapPmWorkbench" target="1.8" />
+      <module name="SmartApacheSpark" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

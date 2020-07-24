@@ -12,6 +12,8 @@ public class ProxyClassesGen {
     String todayMillis = Long.toString(today.getTime());
     String todayClass = "z_" + todayMillis;
     String todaySource = todayClass + ".java";
+
+
     String source = this.getClass().getClassLoader().getResource("").getPath().concat("//").concat(todaySource);
 
     public static void main(String args[]) {
@@ -60,4 +62,6 @@ public class ProxyClassesGen {
             e.printStackTrace();
         }
     }
+
+
 }
