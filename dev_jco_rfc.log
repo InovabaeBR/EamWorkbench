@@ -64,7 +64,7 @@ com.sap.conn.rfc.exceptions.RfcInvalidConfigurationException: Configuration of d
 	at com.sap.conn.jco.rt.RfcDestination.initialize(RfcDestination.java:1048)
 	at com.sap.conn.jco.rt.RfcDestination.getAttributes(RfcDestination.java:675)
 	at com.sap.conn.jco.rt.RfcDestination.getAttributes(RfcDestination.java:36)
-	at br.com.gesc.sap.services.SapConnect.main(SapLogin.java:36)
+	at SapConnect.main(SapLogin.java:36)
 
 
 **** Error file opened at 20200724 181802 Brasilia Time Rel. 3.1.2 (2019-10-02) [753.512]
@@ -83,7 +83,7 @@ com.sap.conn.rfc.exceptions.RfcInvalidConfigurationException: Configuration of d
 	at com.sap.conn.jco.rt.RfcDestination.initialize(RfcDestination.java:1048)
 	at com.sap.conn.jco.rt.RfcDestination.getAttributes(RfcDestination.java:675)
 	at com.sap.conn.jco.rt.RfcDestination.getAttributes(RfcDestination.java:36)
-	at br.com.gesc.sap.services.SapConnect.main(SapLogin.java:36)
+	at SapConnect.main(SapLogin.java:36)
 
 
 **** Error file opened at 20200724 181924 Brasilia Time Rel. 3.1.2 (2019-10-02) [753.512]
@@ -226,7 +226,7 @@ com.sap.conn.rfc.exceptions.RfcInvalidConfigurationException: Configuration of d
 	at com.sap.conn.jco.rt.RfcDestination.initialize(RfcDestination.java:1048)
 	at com.sap.conn.jco.rt.RfcDestination.getAttributes(RfcDestination.java:675)
 	at com.sap.conn.jco.rt.RfcDestination.getAttributes(RfcDestination.java:36)
-	at br.com.gesc.sap.services.SapConnect.main(SapLogin.java:35)
+	at SapConnect.main(SapLogin.java:35)
 
 
 **** Error file opened at 20200724 183051 Brasilia Time Rel. 3.1.2 (2019-10-02) [753.512]

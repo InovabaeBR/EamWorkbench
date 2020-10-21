@@ -1,10 +1,8 @@
 #for tests only !
-#Fri Jul 24 19:25:54 BRT 2020
+#Tue Oct 20 22:14:05 BRST 2020
 jco.client.lang=pt
-jco.client.client=100
-jco.client.passwd=ecnv@85@
-jco.client.saprouter=/H/177.67.63.18/S/3299/W/emergencial
+jco.client.client=200
+jco.client.passwd=d+bfy#`QX7#0K=_}:,RSnx_;`*T4CcxJH%o%d|6/+a_Qzxu/
 jco.client.user=TR010375
-jco.client.sysnr=02
-jco.server.saprouter=/M/172.31.0.173/S/3602/G/SPACE
-jco.client.ashost=comgas364
+jco.client.sysnr=14
+jco.client.ashost=comgas230.comgas.local
