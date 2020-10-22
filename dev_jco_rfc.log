@@ -339,3 +339,46 @@ COUNTER     73768556
 	error group: 102
 	key: RFC_ERROR_COMMUNICATION
 
+
+**** Error file opened at 20201021 215013 Brasilia Summer Time Rel. 3.1.2 (2019-10-02) [753.512]
+Error:     >Wed Oct 21 21:50:13,866<    RfcException raised by system [<unknown>]:
+	message: Connect to SAP gateway failed
+	Connection parameters: TYPE=A DESTINATION=ComgasDev ASHOST=comgas230.comgas.local SYSNR=14 PCS=1
+
+LOCATION    CPIC (TCP/IP) on local host with Unicode
+ERROR       hostname 'comgas230.comgas.local' unknown
+TIME        Wed Oct 21 20:50:13 2020
+RELEASE     753
+COMPONENT   NI (network interface)
+VERSION     40
+RC          -2
+MODULE      D:/depot/bas/753_REL/src/base/ni/ninti.c
+LINE        898
+DETAIL      NiPGetHostByName: 'comgas230.comgas.local' not found
+SYSTEM CALL getaddrinfo
+COUNTER     2
+
+	return code: RFC_FAILURE (1)
+	error group: 102
+	key: RFC_ERROR_COMMUNICATION
+
+Error:     >Wed Oct 21 21:50:14,009<    RfcException raised by system [<unknown>]:
+	message: Connect to SAP gateway failed
+	Connection parameters: TYPE=A DESTINATION=ComgasDev ASHOST=comgas230.comgas.local SYSNR=14 PCS=1
+
+LOCATION    CPIC (TCP/IP) on local host with Unicode
+ERROR       hostname 'comgas230.comgas.local' unknown
+TIME        Wed Oct 21 20:50:14 2020
+RELEASE     753
+COMPONENT   NI (network interface)
+VERSION     40
+RC          -2
+MODULE      D:/depot/bas/753_REL/src/base/ni/nixxhl.cpp
+LINE        198
+DETAIL      NiHLGetNodeAddr: hostname cached as unknown
+COUNTER     4
+
+	return code: RFC_FAILURE (1)
+	error group: 102
+	key: RFC_ERROR_COMMUNICATION
+

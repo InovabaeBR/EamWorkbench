@@ -1,9 +1,6 @@
 package br.com.gesc.services.sap;
 
-import com.sap.conn.jco.JCoDestination;
-import com.sap.conn.jco.JCoException;
-import com.sap.conn.jco.JCoFunction;
-import com.sap.conn.jco.JCoTable;
+import com.sap.conn.jco.*;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.ArrayList;
@@ -16,6 +13,7 @@ public class SapConnectService {
 
     /**
      * Execução sem parâmetros
+     *
      * @param functionName
      * @param outputTable
      * @return
@@ -26,7 +24,7 @@ public class SapConnectService {
     }
 
     protected List<String> execute(String functionName, HashMap<String, String> inputParameters,
-                             HashMap<String, List<String>> outputTable) {
+                                   HashMap<String, List<String>> outputTable) {
         JCoFunction function = setInputParameters(functionName, inputParameters);
         return getTableResult(outputTable, function);
     }
@@ -53,7 +51,7 @@ public class SapConnectService {
     }
 
     private List<String> getTableResult(HashMap<String, List<String>> outputTable,
-                                  JCoFunction function) {
+                                        JCoFunction function) {
         String result = "";
         List<String> results = new ArrayList<String>();
         try {
@@ -67,7 +65,7 @@ public class SapConnectService {
                     tableName.setRow(i);
                     result = null;
                     for (String outputParam : outputList) {
-                        result = StringUtils.join(result, tableName.getValue(outputParam), ";");
+                        result = StringUtils.join(result, tableName.getValue(outputParam), "|");
                     }
                     results.add(result);
                 }
@@ -77,8 +75,5 @@ public class SapConnectService {
             e.printStackTrace();
         }
         return results;
-
     }
-
-
 }
