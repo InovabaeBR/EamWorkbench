@@ -40,8 +40,6 @@ public class MasterDataCcsService extends SapConnectService {
 
         headers = Arrays.asList("TPCATALOGO", "GRUPOCODE", "CODE", "DESCRICAO", "STATUS", "TIPONS", "PRECO", "CATALOGO");
         utils.exportToJson(instance.getCatalogosNotaServico(), "Catalogos_Notas");
-
-
     }
 
     protected List<String> getCatalogoMedidas() throws JCoException {

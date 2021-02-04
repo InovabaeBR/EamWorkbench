@@ -1,5 +1,6 @@
 package br.com.gesc.jobs;
 
+
 import org.apache.spark.SparkConf;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;

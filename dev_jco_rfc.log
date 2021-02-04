@@ -382,3 +382,17 @@ COUNTER     4
 	error group: 102
 	key: RFC_ERROR_COMMUNICATION
 
+
+**** Error file opened at 20210127 165913 Brasilia Time Rel. 3.1.2 (2019-10-02) [753.512]
+Error: [1]    >Wed Jan 27 16:59:13,555<    RfcException raised by system [CCQ|comgas230|14] for user [TR010375]:
+	message: O nome ou a senha não está correto (repetir o logon)
+	return code: RFC_SYS_EXCEPTION (3)
+	error group: 103
+	key: RFC_ERROR_LOGON_FAILURE
+
+Error: [1]    >Wed Jan 27 16:59:13,728<    RfcException raised by system [CCQ|comgas230|14] for user [TR010375]:
+	message: O nome ou a senha não está correto (repetir o logon)
+	return code: RFC_SYS_EXCEPTION (3)
+	error group: 103
+	key: RFC_ERROR_LOGON_FAILURE
+

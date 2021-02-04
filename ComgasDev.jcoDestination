@@ -1,8 +1,10 @@
 #for tests only !
-#Wed Oct 21 22:43:30 BRST 2020
+#Wed Jan 27 18:42:41 BRT 2021
 jco.client.lang=pt
-jco.client.client=200
-jco.client.passwd=wpqd0cfBZeem7gzA2[*gr?962#|g[ZO0|$qnrg+*pOfhpiL]
+jco.client.client=100
+jco.client.passwd=e)viOqVP|Xsxt$rwk:;imHlGDNmUMVrST)?TBJk=)xJqs$;O
+jco.client.saprouter=/H/177.67.63.18/S/3299/W/emergencial
 jco.client.user=TR010375
-jco.client.sysnr=14
-jco.client.ashost=comgas230.comgas.local
+jco.client.sysnr=02
+jco.server.saprouter=/M/172.31.0.173/S/3602/G/SPACE
+jco.client.ashost=comgas364

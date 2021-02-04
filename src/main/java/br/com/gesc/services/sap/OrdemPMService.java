@@ -28,7 +28,6 @@ public class OrdemPMService extends SapConnectService {
         inputParameters.put("CENTRO", centro);
         inputParameters.put("IDIOMA", "PT");
 
-
         HashMap<String, List<String>> outputTable = new HashMap<String, List<String>>();
         List<String> values = Arrays.asList("CODIGO", "DESCRICAO");
         outputTable.put("DESVIOS", values);

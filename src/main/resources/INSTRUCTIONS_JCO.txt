@@ -1,0 +1,2 @@
+- Copiar a dll na pasta windows\system32
+- Adicionar o jar do sapjco manualmente no classpath da IDE para compilar 
