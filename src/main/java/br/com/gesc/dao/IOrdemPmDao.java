@@ -6,8 +6,9 @@ import br.com.gesc.model.sap.ordemSapPm.OrdemSapPmOperacao;
 
 import java.util.List;
 
-public interface OrdemPmDao {
+public interface IOrdemPmDao {
     public void criar(OrdemSapPm ordem);
+    public OrdemSapPm exibir(long numeroOrdem);
     public List<OrdemSapPm> exibir();
     public void atualizar(OrdemSapPm ordem);
     public void apontarDesvios(List<ApontamentoHoraOrdem> apontamentos);
@@ -15,4 +16,6 @@ public interface OrdemPmDao {
     public void anexar(OrdemSapPm ordem, List<String> hyperlinks);
     public void atribuirPessoa(List<Long> numeroPessoas, OrdemSapPmOperacao operacao);
     public void encerrarTecnicamente(OrdemSapPm ordem);
+    public List<String> alterarStatus(OrdemSapPm ordem, String statusExterno);
+    public List<String> getDesvios(String centro);
 }

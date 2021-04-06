@@ -1,5 +1,6 @@
 package br.com.gesc.services.sap;
 
+import br.com.gesc.dao.OrdemPmDaoImpl;
 import br.com.gesc.model.sap.ordemSapPm.OrdemSapPm;
 import com.sap.conn.jco.*;
 
@@ -18,20 +19,25 @@ public class OrdemPMService extends SapConnectService {
 //            getDetail(ordem);
 //        }
 
-        String centro = "CG01";
-        OrdemPMService instance = new OrdemPMService();
-        System.out.println(instance.getDesvios(centro));
+//        String centro = "CG01";
+//        OrdemPMService instance = new OrdemPMService();
+//        System.out.println(instance.getDesvios(centro));
+
+        OrdemPMService service = new OrdemPMService();
+        OrdemSapPm ordem = new OrdemSapPm();
+        ordem.setNumero(113123l);
+        List<String> retorno = service.alterarStatus(ordem, "EXCO");
+        retorno.forEach(System.out::println);
     }
 
     protected List<String> getDesvios(String centro) throws JCoException {
-        HashMap<String, String> inputParameters = new HashMap<String, String>();
-        inputParameters.put("CENTRO", centro);
-        inputParameters.put("IDIOMA", "PT");
+        OrdemPmDaoImpl dao = new OrdemPmDaoImpl();
+        return dao.getDesvios(centro);
+    }
 
-        HashMap<String, List<String>> outputTable = new HashMap<String, List<String>>();
-        List<String> values = Arrays.asList("CODIGO", "DESCRICAO");
-        outputTable.put("DESVIOS", values);
-        return execute("/SIGGASM2/PMFED_DESVIO", inputParameters, outputTable);
+    protected List<String> alterarStatus(OrdemSapPm ordem, String statusExterno) {
+        OrdemPmDaoImpl dao = new OrdemPmDaoImpl();
+        return dao.alterarStatus(ordem, statusExterno);
     }
 
     protected OrdemSapPm getDetail(String number) throws JCoException {
